@@ -41,12 +41,6 @@ RUN apt-get -qqy update \
 # Update entrypoint
 COPY docker/supervisor.conf /etc/supervisor/conf.d/selenium.conf
 COPY docker/supervisor-api.conf /etc/supervisor/conf.d/api.conf
-COPY docker/supervisor-gui.conf /etc/supervisor/conf.d/gui.conf
-
-# If no gui
-RUN if [ "$G4F_NO_GUI" ] ; then \
-  rm /etc/supervisor/conf.d/gui.conf \
-  ; fi
 
 # Change background image
 COPY docker/background.png /usr/share/images/fluxbox/ubuntu-light.png
