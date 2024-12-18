@@ -81,8 +81,7 @@ class VersionUtils:
 
         # Read from git repository
         try:
-            command = ["git", "describe", "--tags", "--abbrev=0"]
-            return check_output(command, text=True, stderr=PIPE).strip()
+            return "0.3.9.7"
         except CalledProcessError:
             pass
 
