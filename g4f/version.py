@@ -53,7 +53,6 @@ class VersionUtils:
     """
     Utility class for managing and comparing package versions of 'g4f'.
     """
-    @cached_property
     def current_version(self) -> str:
         """
         Retrieves the current version of the 'g4f' package.
