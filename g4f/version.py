@@ -65,27 +65,7 @@ class VersionUtils:
             VersionNotFoundError: If the version cannot be determined from the package manager, 
                                   Docker environment, or git repository.
         """
-        if debug.version:
-            return debug.version
-
-        # Read from package manager
-        try:
-            return get_package_version(PACKAGE_NAME)
-        except PackageNotFoundError:
-            pass
-
-        # Read from docker environment
-        version = environ.get("G4F_VERSION")
-        if version:
-            return version
-
-        # Read from git repository
-        try:
-            return "0.3.9.7"
-        except CalledProcessError:
-            pass
-
-        raise VersionNotFoundError("Version not found")
+        return "0.3.9.7"
 
     @property
     def latest_version(self) -> str:
